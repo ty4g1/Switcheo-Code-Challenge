@@ -1,7 +1,9 @@
+import ExchangeForm from "./components/ExchangeForm/ExchangeForm";
+
 function App() {
   return (
-    <div className="App">
-      <p>Hello World!</p>
+    <div className='App'>
+      <ExchangeForm />
     </div>
   );
 }

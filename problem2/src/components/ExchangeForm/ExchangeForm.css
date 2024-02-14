@@ -1,0 +1,51 @@
+.exchange-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.exchange-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.exchange-form label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.exchange-form input[type="number"] {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.exchange-form select {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.exchange-form button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.exchange-form button:hover {
+    background-color: #0056b3;
+}

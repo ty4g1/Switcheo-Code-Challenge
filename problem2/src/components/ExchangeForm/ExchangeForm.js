@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
+import './ExchangeForm.css';
 
 const ExchangeForm = () => {
     const handleSubmit = (e) => {};
-    const [prices, setPrices] = useState();
-    const [inAmount, setInAmount] = useState([]);
+    const [prices, setPrices] = useState([]);
+    const [inAmount, setInAmount] = useState(0);
     const [inToken, setInToken] = useState('ETH');
     const [outAmount, setOutAmount] = useState(0);
     const [outToken, setOutToken] = useState('');
@@ -38,7 +39,9 @@ const ExchangeForm = () => {
                 <h2>Swap</h2>
 
                 <label htmlFor="input-token">Choose token</label>
-                <select name="input-token" id="input-token" value={inToken} onChange={e => setInToken(e.target.value)}>
+                <select name="input-token" id="input-token" value={inToken} 
+                onChange={e => {setInToken(e.target.value);
+                                setOutAmount(computeExchange(inAmount, inToken, e.target.value))}}>
                     {prices && prices.map(entry => 
                         <option value={entry.currency}>{entry.currency}</option>
                     )}
@@ -47,10 +50,12 @@ const ExchangeForm = () => {
                 <label htmlFor="input-amount">Amount to send</label>
                 <input type="number" name="input-amount" id="input-amount" value={inAmount} 
                 onChange={e => {setInAmount(e.target.value);
-                                setOutAmount(computeExchange(e.target.value, inToken, outToken))}}/>
+                                setOutAmount(computeExchange(e.target.value, inToken, outToken));}}/>
 
                 <label htmlFor="output-token">Choose token</label>
-                <select name="output-token" id="output-token" value={outToken} onChange={e => setOutToken(e.target.value)}>
+                <select name="output-token" id="output-token" value={outToken} 
+                onChange={e => {setOutToken(e.target.value);
+                                setOutAmount(computeExchange(inAmount, inToken, e.target.value));}}>
                     <option value=''/>
                     {prices && prices.map(entry => 
                         <option value={entry.currency}>{entry.currency}</option>

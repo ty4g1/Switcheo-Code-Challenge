@@ -30,8 +30,8 @@ const ExchangeForm = () => {
             setError("You cannot exchange zero tokens");
         } else {
             setMessage("Exchange successful!");
-            setInAmount(0);
-            setOutAmount(0);
+            setInAmount('');
+            setOutAmount('');
             setInToken('');
             setOutToken('');
         }

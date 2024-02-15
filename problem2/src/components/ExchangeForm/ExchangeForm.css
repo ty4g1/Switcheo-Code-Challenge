@@ -1,51 +1,148 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .exchange-form {
+    position: relative;
+}
+
+.wrapper {
+    color: gray;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 100vh;
     padding: 20px;
     box-sizing: border-box;
 }
 
-.exchange-form form {
+
+.wrapper form {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     max-width: 400px;
+    border: 1px ;
+    border-radius: 50px;
+    padding: 0 40px 0 40px;
 }
 
-.exchange-form label {
-    margin-top: 10px;
-    margin-bottom: 5px;
+.wrapper form .swap-icon {
+    margin: 0;
+    padding: 0;
 }
 
-.exchange-form input[type="number"] {
-    margin-top: 10px;
-    margin-bottom: 20px;
-    padding: 10px;
+.wrapper form .form-box {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    box-sizing: border-box;
+    padding: 20px;
+    margin: 10px;
+    border-style: solid;
+    border-color: rgb(212, 212, 212);
+    border-radius: 20px;
 }
 
-.exchange-form select {
-    margin-top: 10px;
-    margin-bottom: 20px;
-    padding: 10px;
+.wrapper form .form-box label {
     width: 100%;
-    box-sizing: border-box;
+    text-align: left;
+    font-size: medium;
 }
 
-.exchange-form button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
+
+.wrapper form .form-box .input-fields {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.wrapper form .form-box .input-fields input {
+    border-style: none;
+    width: 60%;
+    font-size: xx-large;
+}
+
+.wrapper form .form-box .input-fields input:focus {
+    outline: none;
+}
+
+.wrapper form .form-box .input-fields .token-select-false, .token-select-true {
+    text-align: center;
+    align-items: center;
+    width: auto;
+    font-size: small;
+    border: 2px solid rgba(128, 128, 128, 0.178);
+    border-radius: 50px;
+    padding: 5px 15px;
+    display: flex;
+}
+
+.wrapper form .form-box .input-fields .token-select-true {
+    padding: 0 10px;
+}
+
+.wrapper form .form-box .input-fields .token-select-true p{
+    font-weight: bold;
+    padding-left: 5px;
+}
+
+.wrapper form .form-box .input-fields .token-select-false:hover, .token-select-true:hover {
     cursor: pointer;
-    transition: background-color 0.3s;
+    background-color: rgba(128, 128, 128, 0.1);
 }
 
-.exchange-form button:hover {
-    background-color: #0056b3;
+
+.wrapper form .swap-icon:hover {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.wrapper form .form-box .price {
+    width: 100%;
+    text-align: left;
+    font-size: small;
+    font-weight: lighter;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: gray
+}
+
+.wrapper form button {
+    width: fit-content;
+    margin: 25px;
+    padding: 15px;
+    color: blue;
+    font-size: large;
+    border: 1px solid blue;
+    border-radius: 10px;
+    outline: none;
+}
+
+.wrapper form button:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 255, 0.1);
+}
+
+.wrapper form .error {
+    width: fit-content;
+    margin: 25px;
+    padding: 15px;
+    color: red;
+    border: 1px solid red;
+    border-radius: 10px;
+}
+
+.wrapper form .message {
+    width: fit-content;
+    margin: 25px;
+    padding: 15px;
+    color: lime;
+    border: 1px solid lime;
+    border-radius: 10px;
 }

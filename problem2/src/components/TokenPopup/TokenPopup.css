@@ -1,0 +1,84 @@
+.token-popup-wrapper {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.2);
+    align-items: center;
+}
+
+.token-popup {
+    width: 50%;
+    max-width: 400px;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    padding: 30px;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.token-popup .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.token-popup .header h2 {
+    margin-top: 0;
+    padding-left: 10px;
+}
+
+.token-popup .header span:hover {
+    cursor: pointer;
+}
+
+.token-popup .searchbar {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    justify-content: flex-start;
+    border-radius: 20px;
+    align-items: center;
+}
+
+.token-popup .searchbar input {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    font-size: large;
+    padding-right: 30px;
+}
+
+.token-popup .tokens-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    overflow-y: scroll;
+    height: 400px;
+}
+
+.token-popup .tokens-list .token {
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    font-size: x-large;
+    background-color: rgba(128, 128, 128, 0.2);
+    margin: 5px 0;
+    padding: 5px
+}
+
+.token-popup .tokens-list .token:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.token-popup .tokens-list .token p {
+    margin: 0 0 0 10px;
+    font-weight: lighter;
+}
+
+.token-popup .tokens-list .token img {
+    height: 50px;
+}

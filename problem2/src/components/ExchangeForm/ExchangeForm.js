@@ -11,9 +11,9 @@ const images = importAll(require.context('../../assets/images/tokens', false, /\
 
 const ExchangeForm = () => {
     const [prices, setPrices] = useState([]);
-    const [inAmount, setInAmount] = useState(0);
+    const [inAmount, setInAmount] = useState();
     const [inToken, setInToken] = useState('');
-    const [outAmount, setOutAmount] = useState(0);
+    const [outAmount, setOutAmount] = useState();
     const [outToken, setOutToken] = useState('');
     const [inPopup, setInPopup] = useState(false);
     const [outPopup, setOutPopup] = useState(false);
@@ -24,7 +24,9 @@ const ExchangeForm = () => {
         e.preventDefault();
         setError("");
         setMessage("");
-        if (!(inAmount && outAmount)) {
+        if (!(inToken && outToken)) {
+            setError("Please select a token");
+        } else if (!(inAmount && outAmount)) {
             setError("You cannot exchange zero tokens");
         } else {
             setMessage("Exchange successful!");
@@ -68,8 +70,9 @@ const ExchangeForm = () => {
     }, [])
 
     useEffect(() => {
-        setOutAmount(computeExchange(inAmount, inToken, outToken));
-        console.log('boo');
+        if (inToken && outToken) {
+            setOutAmount(computeExchange(inAmount, inToken, outToken));
+        }
     }, [inToken, outToken])
 
     return (
@@ -101,7 +104,9 @@ const ExchangeForm = () => {
                                 placeholder='0' 
                                 value={inAmount} 
                                 onChange={e => {setInAmount(e.target.value);
-                                                setOutAmount(computeExchange(e.target.value, inToken, outToken))}}/>
+                                                if (inToken && outToken) {
+                                                    setOutAmount(computeExchange(e.target.value, inToken, outToken));
+                                                }}}/>
                             
                             {!inToken && <p className='token-select-false' onClick={e => setInPopup(true)}>Select Token <span class="material-symbols-outlined">expand_more</span></p>}
                             {inToken && <p className='token-select-true' onClick={e => setInPopup(true)}>
@@ -130,7 +135,9 @@ const ExchangeForm = () => {
                                 placeholder='0'
                                 value={outAmount} 
                                 onChange={e => {setOutAmount(e.target.value);
-                                                setInAmount(computeExchange(e.target.value, outToken, inToken))}}/>
+                                                if (inToken && outToken) {
+                                                    setInAmount(computeExchange(e.target.value, outToken, inToken));
+                                }}}/>
 
                             {!outToken && <p className='token-select-false' onClick={e => setOutPopup(true)}>Select Token <span class="material-symbols-outlined">expand_more</span></p>}
                             {outToken && <p className='token-select-true' onClick={e => setOutPopup(true)}>
@@ -154,7 +161,7 @@ const ExchangeForm = () => {
                     
                    {error && <div className="error"><p>{error}</p></div>}
                    {message && <div className="message"><p>{message}</p></div>}
-                    <button>Confirm Swap</button>
+                    <button>Exchange</button>
                 </form>
             </div>
         </div>

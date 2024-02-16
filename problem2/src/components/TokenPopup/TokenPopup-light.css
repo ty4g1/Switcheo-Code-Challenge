@@ -74,7 +74,6 @@
     flex-direction: column;
     margin-top: 20px;
     overflow-y: scroll;
-    height: 400px;
     border-radius: 20px;
 }
 

@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import './TokenPopup.css'
+import './TokenPopup-light.css'
+import './TokenPopup-dark.css'
 function importAll(r) {
     let images = {};
     r.keys().map((item) => { images[item.replace('./', '')] = r(item); });
@@ -31,7 +32,7 @@ const TokenPopup = (props) => {
                 </div>
                 <div className="searchbar">
                     <span class="material-symbols-outlined">search</span>
-                    <input type="text" name="search" id="search" placeholder="Search" value={searchedToken} onChange={handleChange}/>
+                    <input type="text" name="search" id="search" autoFocus placeholder="Search" value={searchedToken} onChange={handleChange}/>
                 </div>
                 <h3>Search results</h3>
                 <div className="tokens-list">

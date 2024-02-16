@@ -1,0 +1,181 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+  
+.dark .mode {
+    margin: 10px;
+    padding: 10px;
+    position: absolute;
+    color: gray;
+    cursor: pointer;
+    background-color: black;
+    border: solid;
+    border-radius: 50px;
+}
+
+.dark .mode:hover {
+    background-color: rgba(128, 128, 128, 0.1);
+    cursor: pointer;
+}
+
+.dark .exchange-form {
+    position: relative;
+    width: 100%;
+    background-color: black;
+}
+
+.dark .wrapper {
+    color: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.dark .wrapper form {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    border: 1px ;
+    border-radius: 50px;
+    padding: 0 40px 0 40px;
+}
+
+.dark .wrapper form .swap-icon {
+    margin: 0;
+    padding: 0;
+}
+
+.dark .wrapper form .form-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    border-style: solid;
+    border-color: rgba(128, 128, 128, 0.1);
+    border-radius: 20px;
+    margin: 5px;
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+.dark .wrapper form .form-box label {
+    width: 100%;
+    text-align: left;
+    font-size: medium;
+}
+
+
+.dark .wrapper form .form-box .input-fields {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.dark .wrapper form .form-box .input-fields input {
+    border-style: none;
+    width: 60%;
+    font-size: xx-large;
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+}
+
+.dark .wrapper form .form-box .input-fields input:focus {
+    outline: none;
+}
+
+.dark .wrapper form .form-box .input-fields .token-select-false, .token-select-true {
+    text-align: center;
+    align-items: center;
+    width: auto;
+    font-size: small;
+    border: 2px solid rgba(128, 128, 128, 0.178);
+    border-radius: 50px;
+    padding: 5px 15px;
+    display: flex;
+}
+
+.dark .wrapper form .form-box .input-fields .token-select-true {
+    padding: 0 10px;
+}
+
+.dark .wrapper form .form-box .input-fields .token-select-true p{
+    font-weight: bold;
+    padding-left: 5px;
+}
+
+.dark .wrapper form .form-box .input-fields .token-select-false:hover, .token-select-true:hover {
+    cursor: pointer;
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+.dark .wrapper form .swap-icon {
+    font-size: xx-large;
+    padding: 5px;
+    position: absolute;
+    top: 36%;
+    border: 2px solid rgba(212, 212, 212, 0.1);
+    border-radius: 20px;
+    background-color: rgb(14, 14, 14);
+}
+
+.dark .wrapper form .swap-icon:hover {
+    cursor: pointer;
+    background-color: rgb(29, 29, 29);
+}
+
+.dark .wrapper form .form-box .price {
+    width: 100%;
+    text-align: left;
+    font-size: small;
+    font-weight: lighter;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: gray
+}
+
+.dark .wrapper form button {
+    width: 100%;
+    padding: 10px;
+    color: blue;
+    font-size: large;
+    border: 1px solid blue;
+    border-radius: 10px;
+    outline: none;
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.dark .wrapper form button:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 255, 0.1);
+}
+
+.dark .wrapper .error {
+    width: fit-content;
+    padding: 5px 15px;
+    margin-top: 20px;
+    color: red;
+    border: 1px solid red;
+    border-radius: 10px;
+}
+
+.dark .wrapper .message {
+    width: fit-content;
+    padding: 5px 15px;
+    margin-top: 20px;
+    color: lime;
+    border: 1px solid lime;
+    border-radius: 10px;
+}

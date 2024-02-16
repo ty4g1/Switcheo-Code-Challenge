@@ -4,13 +4,31 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-.exchange-form {
-    position: relative;
+.light .mode {
+    margin: 10px;
+    padding: 10px;
+    position: absolute;
+    color: gray;
+    cursor: pointer;
+    background-color: white;
+    border: solid;
+    border-radius: 50px;
 }
 
-.wrapper {
+.light .mode:hover {
+    background-color: rgba(128, 128, 128, 0.1);
+    cursor: pointer;
+}
+
+.light .exchange-form {
+    position: relative;
+    width: 100%;
+}
+
+.light .wrapper {
     color: gray;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -18,9 +36,9 @@ input::-webkit-inner-spin-button {
     box-sizing: border-box;
 }
 
-
-.wrapper form {
+.light .wrapper form {
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -30,47 +48,47 @@ input::-webkit-inner-spin-button {
     padding: 0 40px 0 40px;
 }
 
-.wrapper form .swap-icon {
+.light .wrapper form .swap-icon {
     margin: 0;
     padding: 0;
 }
 
-.wrapper form .form-box {
+.light .wrapper form .form-box {
     display: flex;
     flex-direction: column;
     width: 100%;
     padding: 20px;
-    margin: 10px;
-    border-style: solid;
     border-color: rgb(212, 212, 212);
+    border-style: solid;
     border-radius: 20px;
+    margin: 5px;
 }
 
-.wrapper form .form-box label {
+.light .wrapper form .form-box label {
     width: 100%;
     text-align: left;
     font-size: medium;
 }
 
 
-.wrapper form .form-box .input-fields {
+.light .wrapper form .form-box .input-fields {
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
 }
 
-.wrapper form .form-box .input-fields input {
+.light .wrapper form .form-box .input-fields input {
     border-style: none;
     width: 60%;
     font-size: xx-large;
 }
 
-.wrapper form .form-box .input-fields input:focus {
+.light .wrapper form .form-box .input-fields input:focus {
     outline: none;
 }
 
-.wrapper form .form-box .input-fields .token-select-false, .token-select-true {
+.light .wrapper form .form-box .input-fields .token-select-false, .token-select-true {
     text-align: center;
     align-items: center;
     width: auto;
@@ -81,27 +99,36 @@ input::-webkit-inner-spin-button {
     display: flex;
 }
 
-.wrapper form .form-box .input-fields .token-select-true {
+.light .wrapper form .form-box .input-fields .token-select-true {
     padding: 0 10px;
 }
 
-.wrapper form .form-box .input-fields .token-select-true p{
+.light .wrapper form .form-box .input-fields .token-select-true p{
     font-weight: bold;
     padding-left: 5px;
 }
 
-.wrapper form .form-box .input-fields .token-select-false:hover, .token-select-true:hover {
+.light .wrapper form .form-box .input-fields .token-select-false:hover, .token-select-true:hover {
     cursor: pointer;
     background-color: rgba(128, 128, 128, 0.1);
 }
 
-
-.wrapper form .swap-icon:hover {
-    cursor: pointer;
-    font-weight: bold;
+.light .wrapper form .swap-icon {
+    font-size: xx-large;
+    padding: 5px;
+    position: absolute;
+    top: 36%;
+    border: 2px solid rgb(212, 212, 212);
+    border-radius: 20px;
+    background-color: white;
 }
 
-.wrapper form .form-box .price {
+.light .wrapper form .swap-icon:hover {
+    cursor: pointer;
+    background-color: rgb(242, 242, 242);
+}
+
+.light .wrapper form .form-box .price {
     width: 100%;
     text-align: left;
     font-size: small;
@@ -113,35 +140,35 @@ input::-webkit-inner-spin-button {
     color: gray
 }
 
-.wrapper form button {
-    width: fit-content;
-    margin: 25px;
-    padding: 15px;
+.light .wrapper form button {
+    width: 100%;
+    padding: 10px;
     color: blue;
     font-size: large;
     border: 1px solid blue;
     border-radius: 10px;
     outline: none;
+    margin-top: 10px;
 }
 
-.wrapper form button:hover {
+.light .wrapper form button:hover {
     cursor: pointer;
     background-color: rgba(0, 0, 255, 0.1);
 }
 
-.wrapper form .error {
+.light .wrapper .error {
     width: fit-content;
-    margin: 25px;
-    padding: 15px;
+    padding: 5px 15px;
+    margin-top: 20px;
     color: red;
     border: 1px solid red;
     border-radius: 10px;
 }
 
-.wrapper form .message {
+.light .wrapper .message {
     width: fit-content;
-    margin: 25px;
-    padding: 15px;
+    padding: 5px 15px;
+    margin-top: 20px;
     color: lime;
     border: 1px solid lime;
     border-radius: 10px;

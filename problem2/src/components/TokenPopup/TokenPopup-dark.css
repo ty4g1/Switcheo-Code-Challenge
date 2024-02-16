@@ -1,0 +1,102 @@
+.dark ::-webkit-scrollbar {
+    width: 10px;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #888; 
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #555; 
+}
+
+
+.dark .token-popup-wrapper {
+    margin: auto;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.2);
+    align-items: center;
+    z-index: 1;
+}
+
+.dark .token-popup {
+    width: 25%;
+    height: 75%;
+    display: flex;
+    background-color: rgb(14, 14, 14);
+    flex-direction: column;
+    padding: 30px;
+    margin: auto;
+    border-radius: 20px;
+    color: white;
+}
+
+.dark .token-popup .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dark .token-popup .header h2 {
+    margin-top: 0;
+    padding-left: 10px;
+}
+
+.dark .token-popup .header span:hover {
+    cursor: pointer;
+}
+
+.dark .token-popup .searchbar {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    justify-content: flex-start;
+    border-radius: 20px;
+    align-items: center;
+}
+
+.dark .token-popup .searchbar input {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    font-size: large;
+    padding-right: 30px;
+    background-color: rgb(14, 14, 14);
+    color: white;
+}
+
+.dark .token-popup .tokens-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    overflow-y: scroll;
+    height: 400px;
+}
+
+.dark .token-popup .tokens-list .token {
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    font-size: x-large;
+    background-color: rgba(128, 128, 128, 0.2);
+    margin: 5px 0;
+    padding: 5px
+}
+
+.dark .token-popup .tokens-list .token:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.dark .token-popup .tokens-list .token p {
+    margin: 0 0 0 10px;
+    font-weight: darker;
+}
+
+.dark .token-popup .tokens-list .token img {
+    height: 50px;
+}

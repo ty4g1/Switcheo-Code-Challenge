@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import TokenPopup from '../TokenPopup/TokenPopup';
-import './ExchangeForm.css';
+import './ExchangeForm-light.css';
+import './ExchangeForm-dark.css';
 
 function importAll(r) {
     let images = {};
@@ -19,6 +20,28 @@ const ExchangeForm = () => {
     const [outPopup, setOutPopup] = useState(false);
     const [error, setError] = useState('');
     const [message, setMessage] = useState('');
+    const [theme, setTheme] = useState(localStorage.getItem("mode") 
+                                       ? localStorage.getItem("mode") 
+                                       : "dark");
+
+    const toggleTheme = () => {
+        if (theme === 'light') {
+        setTheme('dark');
+        localStorage.setItem("mode", "dark");
+        } else {
+        setTheme('light');
+        localStorage.setItem("mode", "light");
+        }
+    }
+
+    useEffect(() => {
+        if (theme) {
+            document.body.className = theme;
+        } else {
+            document.body.className = "dark";
+            localStorage.setItem("mode", "dark");
+        }
+    }, [theme])
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -77,22 +100,13 @@ const ExchangeForm = () => {
 
     return (
         <div className="exchange-form">
+            {theme === "dark" && <span class="material-symbols-outlined mode" onClick={toggleTheme}>light_mode</span>}
+            {theme === "light" && <span class="material-symbols-outlined mode" onClick={toggleTheme}>dark_mode</span>}
             {inPopup && <TokenPopup tokenState={setInToken} popupState={setInPopup} tokens={prices.map(entry => entry.currency)}></TokenPopup>}
             {outPopup && <TokenPopup tokenState={setOutToken} popupState={setOutPopup} tokens={prices.map(entry => entry.currency)}></TokenPopup>}
             <div className="wrapper">
+                <h2>Token Exchange</h2>
                 <form onSubmit={handleSubmit}>
-                    <h2>Token Exchange</h2>
-
-                    {/* <label htmlFor="input-token">Choose token</label>
-                    <select name="input-token" id="input-token" value={inToken} 
-                    onChange={e => {setInToken(e.target.value)
-                                    setOutAmount(computeExchange(inAmount, e.target.value, outToken))}}>
-                        {prices && prices.map(entry => 
-                            <option value={entry.currency}>{entry.currency}</option>
-                        )}
-                    </select> */}
-
-                    
                     <div className='form-box'>
                         <label htmlFor="input-amount">Send</label>
                         <div className='input-fields'>
@@ -102,6 +116,7 @@ const ExchangeForm = () => {
                                 name="input-amount" 
                                 id="input-amount"
                                 placeholder='0' 
+                                autoFocus
                                 value={inAmount} 
                                 onChange={e => {setInAmount(e.target.value);
                                                 if (inToken && outToken) {
@@ -148,21 +163,10 @@ const ExchangeForm = () => {
                         </div>
                         <div className='price'>${getPrice(outToken, outAmount)}</div>
                     </div>
-                    {/* <label htmlFor="output-token">Choose token</label>
-                    <select name="output-token" id="output-token" value={outToken} 
-                    onChange={e => {setOutToken(e.target.value)
-                                    setOutAmount(computeExchange(inAmount, inToken, e.target.value))}}>
-                        <option value=''/>
-                        {prices && prices.map(entry => 
-                            <option value={entry.currency}>{entry.currency}</option>
-                        )}
-                    </select> */}
-
-                    
-                   {error && <div className="error"><p>{error}</p></div>}
-                   {message && <div className="message"><p>{message}</p></div>}
                     <button>Exchange</button>
                 </form>
+                {error && <div className="error"><p>{error}</p></div>}
+                {message && <div className="message"><p>{message}</p></div>}
             </div>
         </div>
     )

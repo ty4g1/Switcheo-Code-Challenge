@@ -1,15 +1,29 @@
-.token-popup-wrapper {
+.light ::-webkit-scrollbar {
+    width: 10px;
+}
+
+.light ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+.light ::-webkit-scrollbar-thumb {
+    background: #a8a8a8; 
+}
+
+.light .token-popup-wrapper {
+    margin: auto;
     position: absolute;
     display: flex;
     width: 100%;
     height: 100%;
     background-color: rgba(128, 128, 128, 0.2);
     align-items: center;
+    z-index: 1;
 }
 
-.token-popup {
-    width: 50%;
-    max-width: 400px;
+.light .token-popup {
+    width: 25%;
+    height: 75%;
     display: flex;
     background-color: white;
     flex-direction: column;
@@ -18,22 +32,22 @@
     border-radius: 20px;
 }
 
-.token-popup .header {
+.light .token-popup .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.token-popup .header h2 {
+.light .token-popup .header h2 {
     margin-top: 0;
     padding-left: 10px;
 }
 
-.token-popup .header span:hover {
+.light .token-popup .header span:hover {
     cursor: pointer;
 }
 
-.token-popup .searchbar {
+.light .token-popup .searchbar {
     display: flex;
     width: 100%;
     padding: 10px;
@@ -42,7 +56,7 @@
     align-items: center;
 }
 
-.token-popup .searchbar input {
+.light .token-popup .searchbar input {
     width: 100%;
     outline: none;
     border: none;
@@ -51,15 +65,20 @@
     padding-right: 30px;
 }
 
-.token-popup .tokens-list {
+.light .token-popup h3 {
+    padding-bottom: 0;
+}
+
+.light .token-popup .tokens-list {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
     overflow-y: scroll;
     height: 400px;
+    border-radius: 20px;
 }
 
-.token-popup .tokens-list .token {
+.light .token-popup .tokens-list .token {
     display: flex;
     align-items: center;
     border-radius: 20px;
@@ -69,16 +88,16 @@
     padding: 5px
 }
 
-.token-popup .tokens-list .token:hover {
+.light .token-popup .tokens-list .token:hover {
     cursor: pointer;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-.token-popup .tokens-list .token p {
+.light .token-popup .tokens-list .token p {
     margin: 0 0 0 10px;
     font-weight: lighter;
 }
 
-.token-popup .tokens-list .token img {
+.light .token-popup .tokens-list .token img {
     height: 50px;
 }

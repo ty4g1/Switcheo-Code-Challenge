@@ -1,0 +1,15 @@
+.light .mode {
+    margin: 10px;
+    padding: 10px;
+    position: absolute;
+    color: gray;
+    cursor: pointer;
+    background-color: white;
+    border: solid;
+    border-radius: 50px;
+}
+
+.light .mode:hover {
+    background-color: rgba(128, 128, 128, 0.1);
+    cursor: pointer;
+}

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import TokenPopup from '../TokenPopup/TokenPopup';
+import ThemeToggleButton from '../ThemeToggleButton/ThemeToggleButton';
 import './ExchangeForm-light.css';
 import './ExchangeForm-dark.css';
 
@@ -20,28 +21,7 @@ const ExchangeForm = () => {
     const [outPopup, setOutPopup] = useState(false);
     const [error, setError] = useState('');
     const [message, setMessage] = useState('');
-    const [theme, setTheme] = useState(localStorage.getItem("mode") 
-                                       ? localStorage.getItem("mode") 
-                                       : "dark");
-
-    const toggleTheme = () => {
-        if (theme === 'light') {
-        setTheme('dark');
-        localStorage.setItem("mode", "dark");
-        } else {
-        setTheme('light');
-        localStorage.setItem("mode", "light");
-        }
-    }
-
-    useEffect(() => {
-        if (theme) {
-            document.body.className = theme;
-        } else {
-            document.body.className = "dark";
-            localStorage.setItem("mode", "dark");
-        }
-    }, [theme])
+    
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -100,8 +80,7 @@ const ExchangeForm = () => {
 
     return (
         <div className="exchange-form">
-            {theme === "dark" && <span class="material-symbols-outlined mode" onClick={toggleTheme}>light_mode</span>}
-            {theme === "light" && <span class="material-symbols-outlined mode" onClick={toggleTheme}>dark_mode</span>}
+            <ThemeToggleButton/>
             {inPopup && <TokenPopup tokenState={setInToken} popupState={setInPopup} tokens={prices.map(entry => entry.currency)}></TokenPopup>}
             {outPopup && <TokenPopup tokenState={setOutToken} popupState={setOutPopup} tokens={prices.map(entry => entry.currency)}></TokenPopup>}
             <div className="wrapper">

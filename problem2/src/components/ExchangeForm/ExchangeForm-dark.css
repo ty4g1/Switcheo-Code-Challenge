@@ -4,23 +4,6 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-  
-.dark .mode {
-    margin: 10px;
-    padding: 10px;
-    position: absolute;
-    color: gray;
-    cursor: pointer;
-    background-color: black;
-    border: solid;
-    border-radius: 50px;
-}
-
-.dark .mode:hover {
-    background-color: rgba(128, 128, 128, 0.1);
-    cursor: pointer;
-}
-
 .dark .exchange-form {
     position: relative;
     width: 100%;

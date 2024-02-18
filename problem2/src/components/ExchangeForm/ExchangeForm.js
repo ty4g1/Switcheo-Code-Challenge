@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import TokenPopup from '../TokenPopup/TokenPopup';
 import ThemeToggleButton from '../ThemeToggleButton/ThemeToggleButton';
 import './ExchangeForm-light.css';
@@ -72,7 +72,7 @@ const ExchangeForm = () => {
         fetchPrices();
     }, [])
 
-    useEffect(() => {
+    useMemo(() => {
         if (inToken && outToken) {
             setOutAmount(computeExchange(inAmount, inToken, outToken));
         }

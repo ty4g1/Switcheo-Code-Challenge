@@ -1,21 +1,21 @@
 # Switcheo-Code-Challenge
  My answers to the Switcheo Code Challenge, for my application to the Frontend Engineer Intern role
 
- Submission for problem 1: See file in problem1 folder for the code.
+ **Submission for problem 1**: See file in problem1 folder for the code.
 
  Implemented using the following 3 different approaches:
  1. Using formula for Arithmetic Progression.
  2. Using a loop
  3. Using recursion
 
- Submission for problem 2: https://exchange-form.netlify.app
+ **Submission for problem 2**: https://exchange-form.netlify.app
 
  Form made using **HTML, CSS, JS and React**.
  No external UI libraries were used.
  All styles in the CSS files were created by me.
  
 
- Submission for problem 3: See file in problem3 folder for the refactored code.
+ **Submission for problem 3**: See file in problem3 folder for the refactored code.
 
  **Summary of changes for problem 3**
  
